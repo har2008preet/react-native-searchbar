@@ -265,7 +265,7 @@ export default class Search extends Component {
     return (
       <Animated.View
         style={[
-          styles.container,
+          styles.container,this.props.style,
           {
             transform: [
               {
