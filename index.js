@@ -311,7 +311,7 @@ export default class Search extends Component {
                 ref={ref => (this.textInput = ref)}
                 onLayout={() => focusOnLayout && this.textInput.focus()}
                 style={[
-                  styles.input,
+                  styles.input,this.props.inputStyle,
                   {
                     width:this.state.dimensions.width-120,
                     fontSize: fontSize,
