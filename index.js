@@ -5,7 +5,7 @@ import {
   Platform,
   View,
   TextInput,
-  TouchableOpacity,
+  TouchableOpacity, TouchableNativeFeedback,
   Animated
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -285,7 +285,8 @@ export default class Search extends Component {
                 { height: (Platform.OS === 'ios' ? 52 : 62) + heightAdjust }
               ]}>
               {!hideBack && (
-                <TouchableOpacity
+                <TouchableNativeFeedback
+                  background={TouchableNativeFeedback.Ripple('rgba(0,0,0,.2)', true, backCloseSize)}
                   accessible={true}
                   accessibilityComponentType="button"
                   accessibilityLabel={backButtonAccessibilityLabel}
@@ -305,7 +306,7 @@ export default class Search extends Component {
                       }}
                     />
                   )}
-                </TouchableOpacity>
+                </TouchableNativeFeedback>
               )}
               <TextInput
                 ref={ref => (this.textInput = ref)}
@@ -337,7 +338,8 @@ export default class Search extends Component {
                 keyboardAppearance={keyboardAppearance}
                 editable={editable}
               />
-              <TouchableOpacity
+              <TouchableNativeFeedback
+                background={TouchableNativeFeedback.Ripple('rgba(0,0,0,.2)', true, backCloseSize)}
                 accessible={true}
                 accessibilityComponentType="button"
                 accessibilityLabel={closeButtonAccessibilityLabel}
@@ -361,7 +363,7 @@ export default class Search extends Component {
                     }}
                   />
                 )}
-              </TouchableOpacity>
+              </TouchableNativeFeedback>
             </View>
           </View>
         )}
